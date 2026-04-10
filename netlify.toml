@@ -1,3 +1,15 @@
+[[redirects]]
+  from = "http://woodveneer.net/*"
+  to = "https://woodveneer.net/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://www.woodveneer.net/*"
+  to = "https://woodveneer.net/:splat"
+  status = 301
+  force = true
+
 [build]
   command = "npm run build"
   publish = "dist"
