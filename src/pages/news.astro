@@ -1,0 +1,305 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Hero from '../components/Hero.astro';
+import NewsCard from '../components/NewsCard.astro';
+
+const newsArticles = [
+	{
+		title: "Understanding Natural vs Engineered Veneer",
+		excerpt: "A comprehensive guide to help furniture manufacturers and designers choose the right veneer type for their projects based on aesthetic requirements and production scale.",
+		date: "March 15, 2024",
+		category: "Veneer Guide",
+		imageUrl: "/Engineered_Black_&_White_Ebony_Veneer_(6).jpg?auto=compress&cs=tinysrgb&w=800",
+		slug: "natural-vs-engineered-veneer"
+	},
+	{
+		title: "Black & White Ebony: The Signature of Luxury",
+		excerpt: "Explore why Black & White Ebony Veneer has become the material of choice for high-end furniture manufacturers and luxury interior design projects worldwide.",
+		date: "March 10, 2024",
+		category: "Design Trends",
+		imageUrl: "https://images.pexels.com/photos/271711/pexels-photo-271711.jpeg?auto=compress&cs=tinysrgb&w=800",
+		slug: "ebony-veneer-luxury-design"
+	},
+	{
+		title: "Veneer Selection Guide for Furniture Factories",
+		excerpt: "Key considerations when sourcing premium veneer for mass production: quality standards, consistency requirements, backing options, and supply chain management.",
+		date: "March 5, 2024",
+		category: "Industry",
+		imageUrl: "https://images.pexels.com/photos/1350789/pexels-photo-1350789.jpeg?auto=compress&cs=tinysrgb&w=800",
+		slug: "veneer-selection-guide-furniture-factories"
+	},
+	{
+		title: "The Art of Wood Grain Matching",
+		excerpt: "Professional techniques for grain matching in natural veneer applications, creating seamless visual flow across furniture panels and architectural millwork.",
+		date: "February 28, 2024",
+		category: "Craftsmanship",
+		imageUrl: "https://images.pexels.com/photos/1643389/pexels-photo-1643389.jpeg?auto=compress&cs=tinysrgb&w=800",
+		slug: "wood-grain-matching-techniques"
+	},
+	{
+		title: "Veneer Backing Options Explained",
+		excerpt: "Understanding paper backing, fleece backing, and phenolic backing for different veneer applications. Choose the right backing for your production requirements.",
+		date: "February 20, 2024",
+		category: "Technical",
+		imageUrl: "https://images.pexels.com/photos/1457842/pexels-photo-1457842.jpeg?auto=compress&cs=tinysrgb&w=800",
+		slug: "veneer-backing-options-guide"
+	},
+	{
+		title: "Sustainable Veneer Sourcing Practices",
+		excerpt: "How responsible forestry and sustainable sourcing practices are shaping the future of luxury wood veneer supply chains and material transparency.",
+		date: "February 15, 2024",
+		category: "Sustainability",
+		imageUrl: "/Engineered_Black_&_White_Ebony_Veneer_(7).jpg?auto=compress&cs=tinysrgb&w=800",
+		slug: "sustainable-veneer-sourcing"
+	},
+	{
+		title: "Veneer Storage and Handling Best Practices",
+		excerpt: "Protect your veneer investment with proper storage techniques, humidity control, and handling procedures to prevent warping, splitting, or discoloration.",
+		date: "February 10, 2024",
+		category: "Best Practices",
+		imageUrl: "https://images.pexels.com/photos/271711/pexels-photo-271711.jpeg?auto=compress&cs=tinysrgb&w=800",
+		slug: "veneer-storage-handling-guide"
+	},
+	{
+		title: "Hospitality Design Trends: Premium Veneer Applications",
+		excerpt: "How luxury hotels and restaurants are incorporating Black & White Ebony Veneer into signature interiors to create memorable guest experiences.",
+		date: "February 5, 2024",
+		category: "Design Trends",
+		imageUrl: "https://images.pexels.com/photos/1350789/pexels-photo-1350789.jpeg?auto=compress&cs=tinysrgb&w=800",
+		slug: "hospitality-design-veneer-trends"
+	},
+	{
+		title: "Quality Control in Veneer Manufacturing",
+		excerpt: "Behind the scenes of premium veneer production: quality assurance processes, grading standards, and inspection procedures that ensure consistent excellence.",
+		date: "January 28, 2024",
+		category: "Industry",
+		imageUrl: "https://images.pexels.com/photos/1643389/pexels-photo-1643389.jpeg?auto=compress&cs=tinysrgb&w=800",
+		slug: "quality-control-veneer-manufacturing"
+	}
+];
+
+const categories = ["All", "Veneer Guide", "Design Trends", "Industry", "Technical", "Sustainability", "Craftsmanship", "Best Practices"];
+---
+
+<Layout
+	title="News & Insights | Wood Veneer Knowledge | woodveneer.net"
+	description="Expert insights on wood veneer selection, applications, industry trends, and best practices. Learn from professional veneer suppliers about natural and engineered veneer solutions."
+>
+	<Header />
+
+	<Hero
+		title="News & Industry Insights"
+		subtitle="Expert knowledge on wood veneer selection, applications, design trends, and professional guidance for furniture manufacturers and interior design projects."
+		imageUrl="https://images.pexels.com/photos/1457842/pexels-photo-1457842.jpeg?auto=compress&cs=tinysrgb&w=1920"
+		height="medium"
+	/>
+
+	<section class="news-section">
+		<div class="container">
+			<div class="categories-filter">
+				{categories.map(category => (
+					<button class={`category-btn ${category === 'All' ? 'active' : ''}`}>
+						{category}
+					</button>
+				))}
+			</div>
+
+			<div class="news-grid">
+				{newsArticles.map(article => (
+					<NewsCard {...article} />
+				))}
+			</div>
+		</div>
+	</section>
+
+	<section class="newsletter-section">
+		<div class="container">
+			<div class="newsletter-content">
+				<h2>Stay Informed</h2>
+				<p>
+					Subscribe to receive the latest industry insights, product updates, and professional
+					guidance on wood veneer applications delivered directly to your inbox.
+				</p>
+				<form class="newsletter-form">
+					<input
+						type="email"
+						placeholder="Your business email"
+						class="newsletter-input"
+						required
+					/>
+					<button type="submit" class="newsletter-btn">Subscribe</button>
+				</form>
+			</div>
+		</div>
+	</section>
+
+	<Footer />
+</Layout>
+
+<style>
+	.news-section {
+		padding: var(--spacing-xl) 0;
+		background: var(--color-white);
+		min-height: 60vh;
+	}
+
+	.categories-filter {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 1rem;
+		justify-content: center;
+		margin-bottom: var(--spacing-xl);
+	}
+
+	.category-btn {
+		padding: 0.75rem 1.5rem;
+		background: var(--color-white);
+		color: var(--color-gray);
+		border: 2px solid var(--color-ivory);
+		border-radius: 50px;
+		font-size: 0.95rem;
+		font-weight: 500;
+		transition: all 0.3s ease;
+		cursor: pointer;
+	}
+
+	.category-btn:hover,
+	.category-btn.active {
+		background: var(--color-ebony);
+		color: var(--color-ivory);
+		border-color: var(--color-ebony);
+	}
+
+	.news-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+		gap: var(--spacing-md);
+	}
+
+	.newsletter-section {
+		padding: var(--spacing-xl) 0;
+		background: linear-gradient(135deg, var(--color-ebony) 0%, var(--color-walnut) 100%);
+	}
+
+	.newsletter-content {
+		max-width: 700px;
+		margin: 0 auto;
+		text-align: center;
+	}
+
+	.newsletter-content h2 {
+		color: var(--color-ivory);
+		margin-bottom: var(--spacing-md);
+	}
+
+	.newsletter-content p {
+		color: var(--color-ivory);
+		font-size: 1.1rem;
+		line-height: 1.8;
+		margin-bottom: var(--spacing-lg);
+	}
+
+	.newsletter-form {
+		display: flex;
+		gap: 1rem;
+		max-width: 600px;
+		margin: 0 auto;
+	}
+
+	.newsletter-input {
+		flex: 1;
+		padding: 1rem 1.5rem;
+		font-size: 1rem;
+		border: 2px solid transparent;
+		border-radius: 4px;
+		background: var(--color-white);
+		color: var(--color-ebony);
+		font-family: var(--font-body);
+	}
+
+	.newsletter-input:focus {
+		outline: none;
+		border-color: var(--color-gold);
+	}
+
+	.newsletter-input::placeholder {
+		color: var(--color-light-gray);
+	}
+
+	.newsletter-btn {
+		padding: 1rem 2.5rem;
+		font-size: 1rem;
+		font-weight: 500;
+		background: var(--color-gold);
+		color: var(--color-ebony);
+		border: none;
+		border-radius: 4px;
+		cursor: pointer;
+		transition: all 0.3s ease;
+		letter-spacing: 0.5px;
+	}
+
+	.newsletter-btn:hover {
+		background: var(--color-ivory);
+		transform: translateY(-2px);
+	}
+
+	@media (max-width: 1024px) {
+		.news-grid {
+			grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+		}
+	}
+
+	@media (max-width: 768px) {
+		.news-section {
+			padding: var(--spacing-lg) 0;
+		}
+
+		.categories-filter {
+			margin-bottom: var(--spacing-md);
+		}
+
+		.category-btn {
+			padding: 0.625rem 1.25rem;
+			font-size: 0.9rem;
+		}
+
+		.news-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.newsletter-section {
+			padding: var(--spacing-lg) 0;
+		}
+
+		.newsletter-form {
+			flex-direction: column;
+		}
+
+		.newsletter-btn {
+			width: 100%;
+		}
+	}
+</style>
+
+<script>
+	const categoryButtons = document.querySelectorAll('.category-btn');
+
+	categoryButtons.forEach(button => {
+		button.addEventListener('click', () => {
+			categoryButtons.forEach(btn => btn.classList.remove('active'));
+			button.classList.add('active');
+		});
+	});
+
+	const newsletterForm = document.querySelector('.newsletter-form');
+
+	if (newsletterForm) {
+		newsletterForm.addEventListener('submit', (e) => {
+			e.preventDefault();
+			alert('Thank you for subscribing! This is a demonstration form.');
+		});
+	}
+</script>

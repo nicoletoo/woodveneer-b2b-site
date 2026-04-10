@@ -1,0 +1,174 @@
+---
+const year = new Date().getFullYear();
+
+const navigation = [
+	{ name: 'Home', path: '/' },
+	{ name: 'Natural Veneer', path: '/natural-veneer' },
+	{ name: 'Engineered Veneer', path: '/engineered-veneer' },
+	{ name: 'News', path: '/news' },
+	{ name: 'Project', path: '/project' },
+	{ name: 'Contact', path: '/contact' }
+];
+---
+
+<footer class="footer">
+	<div class="container">
+		<div class="footer-content">
+			<div class="footer-brand">
+				<a href="/" class="footer-logo">
+					<span class="logo-text">woodveneer<span class="logo-domain">.net</span></span>
+				</a>
+				<p class="footer-description">
+					Professional B2B wood veneer supplier specializing in premium Black & White Ebony Veneer.
+					Serving furniture manufacturers, interior designers, and architectural material buyers worldwide.
+				</p>
+			</div>
+
+			<div class="footer-nav">
+				<h4>Navigation</h4>
+				<ul>
+					{navigation.map(item => (
+						<li><a href={item.path}>{item.name}</a></li>
+					))}
+				</ul>
+			</div>
+
+			<div class="footer-contact">
+				<h4>Contact</h4>
+				<ul>
+					<li>Email: nicole8842@foxmail.com</li>
+					<li>Phone: +86 181 2854 3551</li>
+					<li>WhatsApp: +86 181 2854 3551</li>
+				</ul>
+			</div>
+
+			<div class="footer-info">
+				<h4>Products</h4>
+				<ul>
+					<li>Natural Ebony Veneer</li>
+					<li>Engineered Ebony Veneer</li>
+					<li>Custom Size & Backing</li>
+					<li>Sample Support</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="footer-bottom">
+			<p>&copy; {year} woodveneer.net. Premium Black & White Ebony Veneer Supplier.</p>
+		</div>
+	</div>
+</footer>
+
+<style>
+	.footer {
+		background: var(--color-ebony);
+		color: var(--color-ivory);
+		padding: var(--spacing-xl) 0 var(--spacing-md);
+		margin-top: var(--spacing-2xl);
+	}
+
+	.footer-content {
+		display: grid;
+		grid-template-columns: 2fr 1fr 1fr 1fr;
+		gap: var(--spacing-lg);
+		margin-bottom: var(--spacing-lg);
+	}
+
+	.footer-brand {
+		max-width: 400px;
+	}
+
+	.footer-logo {
+		font-family: var(--font-heading);
+		font-size: 1.75rem;
+		font-weight: 600;
+		color: var(--color-ivory);
+		display: inline-block;
+		margin-bottom: var(--spacing-sm);
+		transition: color 0.3s ease;
+	}
+
+	.footer-logo:hover {
+		color: var(--color-gold);
+	}
+
+	.logo-domain {
+		color: var(--color-gold);
+	}
+
+	.footer-description {
+		color: var(--color-light-gray);
+		font-size: 0.95rem;
+		line-height: 1.7;
+	}
+
+	.footer-nav h4,
+	.footer-contact h4,
+	.footer-info h4 {
+		font-size: 1.1rem;
+		margin-bottom: var(--spacing-sm);
+		color: var(--color-ivory);
+		font-weight: 600;
+	}
+
+	.footer-nav ul,
+	.footer-contact ul,
+	.footer-info ul {
+		list-style: none;
+	}
+
+	.footer-nav li,
+	.footer-contact li,
+	.footer-info li {
+		margin-bottom: 0.75rem;
+	}
+
+	.footer-nav a {
+		color: var(--color-light-gray);
+		font-size: 0.95rem;
+		transition: color 0.3s ease;
+	}
+
+	.footer-nav a:hover {
+		color: var(--color-gold);
+	}
+
+	.footer-contact li,
+	.footer-info li {
+		color: var(--color-light-gray);
+		font-size: 0.95rem;
+	}
+
+	.footer-bottom {
+		border-top: 1px solid rgba(255, 255, 255, 0.1);
+		padding-top: var(--spacing-md);
+		text-align: center;
+	}
+
+	.footer-bottom p {
+		color: var(--color-light-gray);
+		font-size: 0.9rem;
+	}
+
+	@media (max-width: 1024px) {
+		.footer-content {
+			grid-template-columns: 1fr 1fr;
+			gap: var(--spacing-md);
+		}
+
+		.footer-brand {
+			grid-column: 1 / -1;
+			max-width: 100%;
+		}
+	}
+
+	@media (max-width: 768px) {
+		.footer-content {
+			grid-template-columns: 1fr;
+		}
+
+		.footer {
+			padding: var(--spacing-lg) 0 var(--spacing-md);
+		}
+	}
+</style>

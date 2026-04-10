@@ -1,0 +1,302 @@
+backend:
+  name: git-gateway
+  branch: main
+  repo: woodveneer/woodveneer-website
+
+media_folder: /public/uploads
+public_folder: /uploads
+
+site_url: https://woodveneer.net
+logo_url: https://woodveneer.net/favicon.svg
+
+i18n:
+  structure: single_file
+  locales: [en]
+  default_locale: en
+
+collections:
+  - name: news
+  label: News
+  folder: src/content/news
+  create: true
+  fields:
+    - { label: Title, name: title, widget: string }
+    - { label: Publish Date, name: publish_date, widget: datetime, format: "YYYY-MM-DD" }
+    - { label: Summary, name: summary, widget: text }
+    - { label: Featured Image, name: featured_image, widget: image, required: false }
+    - { label: Body, name: body, widget: markdown }
+    - { label: SEO Title, name: seo_title, widget: string, required: false }
+    - { label: Meta Description, name: meta_description, widget: text, required: false }
+  - name: site_settings
+    label: Site Settings
+    files:
+      - name: settings
+        label: Site Settings
+        file: src/data/settings.json
+        description: Global site configuration
+        format: json
+        fields:
+          - label: Company Name
+            name: company_name
+            widget: string
+            default: "woodveneer.net"
+          - label: Tagline
+            name: tagline
+            widget: string
+            default: "Premium Black & White Ebony Veneer Supplier"
+          - label: Contact Email
+            name: contact_email
+            widget: string
+            default: "0501nicole@gmail.com"
+          - label: WhatsApp Number
+            name: whatsapp
+            widget: string
+            default: "+86 181 2854 3551"
+          - label: Phone Number
+            name: phone
+            widget: string
+            default: "+86 181 2854 3551"
+          - label: Footer Text
+            name: footer_text
+            widget: text
+            default: "Premium Black & White Ebony Veneer Supplier"
+          - label: SEO Title
+            name: seo_title
+            widget: string
+            default: "Premium Black & White Ebony Veneer Supplier | woodveneer.net"
+          - label: SEO Description
+            name: seo_description
+            widget: text
+            default: "Professional B2B wood veneer supplier specializing in natural and engineered Black & White Ebony Veneer for furniture, interior design, and architectural projects worldwide."
+
+  - name: news
+    label: News & Articles
+    folder: src/content/news
+    create: true
+    slug: "{{slug}}"
+    format: md
+    fields:
+      - label: Title
+        name: title
+        widget: string
+        required: true
+      - label: Slug
+        name: slug
+        widget: string
+        required: true
+      - label: Publish Date
+        name: publish_date
+        widget: datetime
+        format: "YYYY-MM-DD"
+        required: true
+      - label: Featured Image
+        name: featured_image
+        widget: image
+        required: true
+      - label: Category
+        name: category
+        widget: select
+        options:
+          - "Veneer Guide"
+          - "Design Trends"
+          - "Industry"
+          - "Technical"
+          - "Sustainability"
+          - "Craftsmanship"
+          - "Best Practices"
+        required: true
+      - label: Summary
+        name: summary
+        widget: text
+        required: true
+      - label: Article Body
+        name: body
+        widget: markdown
+        required: true
+      - label: SEO Title
+        name: seo_title
+        widget: string
+      - label: Meta Description
+        name: meta_description
+        widget: text
+
+  - name: natural_products
+    label: Natural Veneer Products
+    folder: src/content/products/natural
+    create: true
+    slug: "{{slug}}"
+    format: md
+    fields:
+      - label: Product Name
+        name: product_name
+        widget: string
+        required: true
+      - label: Slug
+        name: slug
+        widget: string
+        required: true
+      - label: Featured Image
+        name: featured_image
+        widget: image
+        required: true
+      - label: Gallery Images
+        name: gallery_images
+        widget: list
+        field: { label: Image, name: image, widget: image }
+        required: false
+      - label: Short Description
+        name: short_description
+        widget: text
+        required: true
+      - label: Full Description
+        name: full_description
+        widget: markdown
+        required: true
+      - label: Thickness Options
+        name: thickness
+        widget: string
+        hint: "e.g., 0.5mm, 0.6mm, custom"
+      - label: Width Range
+        name: width
+        widget: string
+        hint: "e.g., 100mm - 640mm"
+      - label: Length Range
+        name: length
+        widget: string
+        hint: "e.g., 2440mm - 3050mm"
+      - label: Backing Options
+        name: backing_options
+        widget: text
+        hint: "e.g., Paper backing, fleece backing, unbacked"
+      - label: Applications
+        name: applications
+        widget: list
+        field: { label: Application, name: app, widget: string }
+        required: false
+      - label: SEO Title
+        name: seo_title
+        widget: string
+      - label: Meta Description
+        name: meta_description
+        widget: text
+
+  - name: engineered_products
+    label: Engineered Veneer Products
+    folder: src/content/products/engineered
+    create: true
+    slug: "{{slug}}"
+    format: md
+    fields:
+      - label: Product Name
+        name: product_name
+        widget: string
+        required: true
+      - label: Slug
+        name: slug
+        widget: string
+        required: true
+      - label: Featured Image
+        name: featured_image
+        widget: image
+        required: true
+      - label: Gallery Images
+        name: gallery_images
+        widget: list
+        field: { label: Image, name: image, widget: image }
+        required: false
+      - label: Short Description
+        name: short_description
+        widget: text
+        required: true
+      - label: Full Description
+        name: full_description
+        widget: markdown
+        required: true
+      - label: Thickness Options
+        name: thickness
+        widget: string
+        hint: "e.g., 0.5mm, 0.6mm, custom"
+      - label: Width Range
+        name: width
+        widget: string
+        hint: "e.g., 640mm"
+      - label: Length Range
+        name: length
+        widget: string
+        hint: "e.g., 2440mm, 2800mm, 3050mm"
+      - label: Backing Options
+        name: backing_options
+        widget: text
+        hint: "e.g., Paper backing, fleece backing, phenolic backing"
+      - label: Customization Options
+        name: customization_options
+        widget: text
+      - label: Applications
+        name: applications
+        widget: list
+        field: { label: Application, name: app, widget: string }
+        required: false
+      - label: SEO Title
+        name: seo_title
+        widget: string
+      - label: Meta Description
+        name: meta_description
+        widget: text
+
+  - name: projects
+    label: Projects
+    folder: src/content/projects
+    create: true
+    slug: "{{slug}}"
+    format: md
+    fields:
+      - label: Project Name
+        name: project_name
+        widget: string
+        required: true
+      - label: Slug
+        name: slug
+        widget: string
+        required: true
+      - label: Featured Image
+        name: featured_image
+        widget: image
+        required: true
+      - label: Gallery Images
+        name: gallery_images
+        widget: list
+        field: { label: Image, name: image, widget: image }
+        required: false
+      - label: Project Type
+        name: project_type
+        widget: select
+        options:
+          - "Hospitality"
+          - "Furniture"
+          - "Interior Design"
+          - "Commercial"
+          - "Residential"
+          - "Retail"
+        required: true
+      - label: Veneer Type
+        name: veneer_type
+        widget: select
+        options:
+          - "Natural"
+          - "Engineered"
+          - "Both"
+        required: true
+      - label: Short Description
+        name: short_description
+        widget: text
+        required: true
+      - label: Project Details
+        name: body
+        widget: markdown
+        required: true
+      - label: SEO Title
+        name: seo_title
+        widget: string
+      - label: Meta Description
+        name: meta_description
+        widget: text

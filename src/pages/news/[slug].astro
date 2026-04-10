@@ -1,0 +1,281 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import Hero from '../../components/Hero.astro';
+import CTASection from '../../components/CTASection.astro';
+
+export async function getStaticPaths() {
+	return [
+		{
+			params: { slug: 'natural-vs-engineered-veneer' }
+		}
+	];
+}
+
+const { slug } = Astro.params;
+
+// Mock article for demo - in production, would fetch from CMS or markdown files
+const articles: Record<string, any> = {
+	'natural-vs-engineered-veneer': {
+		title: 'Understanding Natural vs Engineered Veneer',
+		category: 'Veneer Guide',
+		date: 'March 15, 2024',
+		featured_image: '/uploads/Reconstituted_Black&White_Ebony_Veneer_(4)?auto=compress&cs=tinysrgb&w=1200',
+		seo_title: 'Natural vs Engineered Veneer | Guide for Furniture Manufacturers',
+		meta_description: 'Learn the key differences between natural and engineered Black & White Ebony Veneer to choose the right material for your furniture or interior design project.',
+		content: `
+			<h2>Choosing the Right Veneer for Your Project</h2>
+			<p>When selecting veneer materials for furniture manufacturing or interior design projects, the decision between natural and engineered Black & White Ebony Veneer is fundamental. Each option offers distinct advantages depending on your project requirements, budget constraints, and aesthetic goals.</p>
+
+			<h3>Natural Veneer: Authenticity and Uniqueness</h3>
+			<p>Natural veneer represents the authentic character of genuine ebony timber. Each sheet is a unique piece showcasing:</p>
+			<ul>
+				<li>Distinctive grain patterns that vary from sheet to sheet</li>
+				<li>Dramatic black-and-white contrast in natural color variations</li>
+				<li>Premium aesthetic value for luxury and bespoke projects</li>
+				<li>Organic character that cannot be replicated artificially</li>
+			</ul>
+
+			<p>Natural veneer is ideal for projects where uniqueness is valued, such as high-end custom furniture pieces, bespoke interior design projects, statement furniture for luxury residences, architectural millwork requiring character, and design-forward projects where variation is desired.</p>
+
+			<h3>Engineered Veneer: Consistency and Scalability</h3>
+			<p>Engineered veneer provides consistent appearance and reliable performance across large production volumes:</p>
+			<ul>
+				<li>Uniform grain patterns ensuring visual consistency</li>
+				<li>Batch-to-batch matching for seamless reorders</li>
+				<li>Predictable quality reducing material waste</li>
+				<li>Scalability for high-volume manufacturing</li>
+			</ul>
+
+			<p>Engineered veneer excels in applications requiring consistency: furniture collections with multiple identical pieces, hospitality projects requiring unified aesthetics, commercial installations across multiple locations, large-scale manufacturing with strict specifications, and corporate interiors with standardized design.</p>
+
+			<h3>Key Differences</h3>
+			<table>
+				<tr>
+					<th>Aspect</th>
+					<th>Natural Veneer</th>
+					<th>Engineered Veneer</th>
+				</tr>
+				<tr>
+					<td><strong>Appearance</strong></td>
+					<td>Unique grain variation</td>
+					<td>Consistent patterns</td>
+				</tr>
+				<tr>
+					<td><strong>Production Scale</strong></td>
+					<td>Bespoke/limited</td>
+					<td>Large volume</td>
+				</tr>
+				<tr>
+					<td><strong>Cost</strong></td>
+					<td>Higher</td>
+					<td>Moderate</td>
+				</tr>
+				<tr>
+					<td><strong>Best For</strong></td>
+					<td>Luxury projects</td>
+					<td>Production runs</td>
+				</tr>
+			</table>
+
+			<h3>Professional Recommendation</h3>
+			<p>For most B2B projects, consider a hybrid approach: use natural veneer for focal points and statement pieces where uniqueness adds value, use engineered veneer for production runs where consistency is essential, and combine both in complementary applications within the same project.</p>
+
+			<p>Both materials represent premium quality from woodveneer.net. The choice depends entirely on your project's specific requirements and aesthetic vision.</p>
+		`
+	}
+};
+
+const article = articles[slug];
+
+if (!article) {
+	return Astro.redirect('/news');
+}
+---
+
+<Layout
+	title={article.seo_title}
+	description={article.meta_description}
+>
+	<Header />
+
+	<Hero
+		title={article.title}
+		subtitle={`${article.category} • Published ${article.date}`}
+		imageUrl={article.featured_image}
+		height="medium"
+	/>
+
+	<article class="article-section">
+		<div class="container">
+			<div class="article-header">
+				<div class="article-meta">
+					<span class="category-badge">{article.category}</span>
+					<time class="publish-date">{article.date}</time>
+				</div>
+				<h1 class="article-title">{article.title}</h1>
+			</div>
+
+			<div class="article-content">
+				<div class="article-body" set:html={article.content} />
+
+				<div class="article-footer">
+					<a href="/news" class="back-link">← Back to News</a>
+				</div>
+			</div>
+		</div>
+	</article>
+
+	<CTASection
+		title="Need Veneer for Your Project?"
+		description="Whether you're sourcing natural or engineered Black & White Ebony Veneer, our team is ready to discuss your specifications and requirements."
+		ctaText="Get in Touch"
+		ctaLink="/contact"
+		background="dark"
+	/>
+
+	<Footer />
+</Layout>
+
+<style>
+	.article-section {
+		padding: var(--spacing-xl) 0;
+		background: var(--color-white);
+	}
+
+	.article-header {
+		max-width: 900px;
+		margin: 0 auto var(--spacing-xl);
+	}
+
+	.article-meta {
+		display: flex;
+		align-items: center;
+		gap: 1.5rem;
+		margin-bottom: var(--spacing-md);
+	}
+
+	.category-badge {
+		display: inline-block;
+		background: var(--color-ebony);
+		color: var(--color-ivory);
+		padding: 0.5rem 1.25rem;
+		font-size: 0.85rem;
+		font-weight: 500;
+		border-radius: 50px;
+		letter-spacing: 0.5px;
+		text-transform: uppercase;
+	}
+
+	.publish-date {
+		color: var(--color-light-gray);
+		font-size: 0.95rem;
+	}
+
+	.article-title {
+		font-size: clamp(2rem, 4vw, 3.5rem);
+		color: var(--color-ebony);
+		margin-bottom: 0;
+	}
+
+	.article-content {
+		max-width: 900px;
+		margin: 0 auto;
+	}
+
+	.article-body {
+		font-size: 1.05rem;
+		line-height: 1.8;
+		color: var(--color-gray);
+	}
+
+	.article-body h2 {
+		margin-top: var(--spacing-lg);
+		margin-bottom: var(--spacing-md);
+		color: var(--color-ebony);
+	}
+
+	.article-body h3 {
+		margin-top: var(--spacing-md);
+		margin-bottom: var(--spacing-sm);
+		color: var(--color-ebony);
+	}
+
+	.article-body p {
+		margin-bottom: var(--spacing-md);
+	}
+
+	.article-body ul,
+	.article-body ol {
+		margin: var(--spacing-md) 0;
+		padding-left: 2rem;
+	}
+
+	.article-body li {
+		margin-bottom: 0.75rem;
+	}
+
+	.article-body table {
+		width: 100%;
+		border-collapse: collapse;
+		margin: var(--spacing-lg) 0;
+		background: var(--color-ivory);
+		border-radius: 8px;
+		overflow: hidden;
+	}
+
+	.article-body th,
+	.article-body td {
+		padding: 1rem;
+		text-align: left;
+		border: 1px solid rgba(26, 26, 26, 0.1);
+	}
+
+	.article-body th {
+		background: var(--color-ebony);
+		color: var(--color-ivory);
+		font-weight: 600;
+	}
+
+	.article-body tr:nth-child(even) {
+		background: rgba(26, 26, 26, 0.02);
+	}
+
+	.article-footer {
+		margin-top: var(--spacing-xl);
+		padding-top: var(--spacing-lg);
+		border-top: 1px solid var(--color-ivory);
+	}
+
+	.back-link {
+		display: inline-block;
+		color: var(--color-ebony);
+		font-weight: 500;
+		transition: color 0.3s ease;
+	}
+
+	.back-link:hover {
+		color: var(--color-walnut);
+	}
+
+	@media (max-width: 768px) {
+		.article-section {
+			padding: var(--spacing-lg) 0;
+		}
+
+		.article-meta {
+			flex-direction: column;
+			align-items: flex-start;
+			gap: 0.75rem;
+		}
+
+		.article-body {
+			font-size: 1rem;
+		}
+
+		.article-body h2 {
+			margin-top: var(--spacing-md);
+		}
+	}
+</style>

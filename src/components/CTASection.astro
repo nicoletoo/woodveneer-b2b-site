@@ -1,0 +1,117 @@
+---
+interface Props {
+	title: string;
+	description: string;
+	ctaText: string;
+	ctaLink: string;
+	background?: 'dark' | 'light';
+}
+
+const { title, description, ctaText, ctaLink, background = 'dark' } = Astro.props;
+---
+
+<section class={`cta-section cta-${background}`}>
+	<div class="container">
+		<div class="cta-content">
+			<h2 class="cta-title">{title}</h2>
+			<p class="cta-description">{description}</p>
+			<a href={ctaLink} class="cta-button">{ctaText}</a>
+		</div>
+	</div>
+</section>
+
+<style>
+	.cta-section {
+		padding: var(--spacing-xl) 0;
+		position: relative;
+		overflow: hidden;
+	}
+
+	.cta-dark {
+		background: linear-gradient(135deg, var(--color-ebony) 0%, var(--color-walnut) 100%);
+	}
+
+	.cta-light {
+		background: var(--color-ivory);
+	}
+
+	.cta-content {
+		text-align: center;
+		max-width: 800px;
+		margin: 0 auto;
+	}
+
+	.cta-title {
+		margin-bottom: var(--spacing-md);
+	}
+
+	.cta-dark .cta-title {
+		color: var(--color-ivory);
+	}
+
+	.cta-light .cta-title {
+		color: var(--color-ebony);
+	}
+
+	.cta-description {
+		font-size: 1.15rem;
+		line-height: 1.8;
+		margin-bottom: var(--spacing-lg);
+	}
+
+	.cta-dark .cta-description {
+		color: var(--color-ivory);
+		opacity: 0.9;
+	}
+
+	.cta-light .cta-description {
+		color: var(--color-gray);
+	}
+
+	.cta-button {
+		display: inline-block;
+		padding: 1.15rem 3rem;
+		font-size: 1.05rem;
+		font-weight: 500;
+		border-radius: 4px;
+		transition: all 0.3s ease;
+		letter-spacing: 0.5px;
+	}
+
+	.cta-dark .cta-button {
+		background: var(--color-ivory);
+		color: var(--color-ebony);
+	}
+
+	.cta-dark .cta-button:hover {
+		background: var(--color-white);
+		transform: translateY(-2px);
+		box-shadow: 0 6px 24px rgba(0, 0, 0, 0.3);
+	}
+
+	.cta-light .cta-button {
+		background: var(--color-ebony);
+		color: var(--color-ivory);
+	}
+
+	.cta-light .cta-button:hover {
+		background: var(--color-walnut);
+		transform: translateY(-2px);
+		box-shadow: 0 6px 24px rgba(26, 26, 26, 0.2);
+	}
+
+	@media (max-width: 768px) {
+		.cta-section {
+			padding: var(--spacing-lg) 0;
+		}
+
+		.cta-description {
+			font-size: 1rem;
+		}
+
+		.cta-button {
+			padding: 1rem 2.5rem;
+			font-size: 1rem;
+		}
+	}
+</style>

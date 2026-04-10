@@ -1,0 +1,471 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Hero from '../components/Hero.astro';
+---
+
+<Layout
+	title="Contact Us | Request Samples & Quotes | woodveneer.net"
+	description="Contact woodveneer.net for veneer samples, project quotes, and professional consultation. Our B2B team is ready to support your furniture and interior design projects."
+>
+	<Header />
+
+	<Hero
+		title="Get in Touch"
+		subtitle="Request veneer samples, discuss your project requirements, or explore custom veneer solutions with our professional B2B team."
+		imageUrl="/black-and-white-ebony-table-workshop.jpg?auto=compress&cs=tinysrgb&w=1920"
+		height="medium"
+	/>
+
+	<section class="contact-section">
+		<div class="container">
+			<div class="contact-grid">
+				<div class="contact-info">
+					<h2>Connect With Our Team</h2>
+					<p class="contact-intro">
+						Whether you're a furniture manufacturer, interior designer, architect, or project contractor,
+						our team is ready to discuss your Black & White Ebony Veneer requirements and provide
+						professional guidance.
+					</p>
+
+					<div class="info-blocks">
+						<div class="info-block">
+							<div class="info-icon">📧</div>
+							<h3>Email</h3>
+							<a href="mailto:nicole8842@foxmail.com" class="info-link">nicole8842@foxmail.com</a>
+							<p>For quotes, samples, and general inquiries</p>
+						</div>
+
+						<div class="info-block">
+							<div class="info-icon">📱</div>
+							<h3>Phone & WhatsApp</h3>
+							<a href="tel:+8618128543551" class="info-link">+86 181 2854 3551</a>
+							<p>Direct line for urgent project discussions</p>
+						</div>
+
+						<div class="info-block">
+							<div class="info-icon">🏢</div>
+							<h3>Business Hours</h3>
+							<p><strong>Monday - Friday:</strong> 9:00 AM - 6:00 PM (GMT+8)</p>
+							<p><strong>Saturday:</strong> 9:00 AM - 12:00 PM (GMT+8)</p>
+							<p class="note">We respond to inquiries within 24 business hours</p>
+						</div>
+					</div>
+
+					<div class="services-list">
+						<h3>We Can Help With:</h3>
+						<ul>
+							<li>Veneer sample requests</li>
+							<li>Project quotes and pricing</li>
+							<li>Custom size specifications</li>
+							<li>Backing options consultation</li>
+							<li>Large-volume supply agreements</li>
+							<li>Technical specifications and documentation</li>
+							<li>International shipping arrangements</li>
+							<li>OEM / ODM partnerships</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="contact-form-wrapper">
+					<form class="contact-form">
+						<h3>Send Us Your Inquiry</h3>
+
+						<div class="form-row">
+							<div class="form-group">
+								<label for="name">Your Name *</label>
+								<input type="text" id="name" name="name" required />
+							</div>
+
+							<div class="form-group">
+								<label for="company">Company Name *</label>
+								<input type="text" id="company" name="company" required />
+							</div>
+						</div>
+
+						<div class="form-row">
+							<div class="form-group">
+								<label for="email">Business Email *</label>
+								<input type="email" id="email" name="email" required />
+							</div>
+
+							<div class="form-group">
+								<label for="phone">Phone Number</label>
+								<input type="tel" id="phone" name="phone" />
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="country">Country *</label>
+							<input type="text" id="country" name="country" required />
+						</div>
+
+						<div class="form-group">
+							<label for="veneer-type">Veneer Type of Interest *</label>
+							<select id="veneer-type" name="veneer-type" required>
+								<option value="">Please select</option>
+								<option value="natural">Natural Black & White Ebony Veneer</option>
+								<option value="engineered">Engineered Black & White Ebony Veneer</option>
+								<option value="both">Both Natural and Engineered</option>
+								<option value="not-sure">Not Sure / Need Consultation</option>
+							</select>
+						</div>
+
+						<div class="form-group">
+							<label for="inquiry-type">Type of Inquiry *</label>
+							<select id="inquiry-type" name="inquiry-type" required>
+								<option value="">Please select</option>
+								<option value="samples">Request Samples</option>
+								<option value="quote">Project Quote</option>
+								<option value="technical">Technical Consultation</option>
+								<option value="large-order">Large Volume Order</option>
+								<option value="partnership">OEM / ODM Partnership</option>
+								<option value="other">Other</option>
+							</select>
+						</div>
+
+						<div class="form-group">
+							<label for="quantity">Estimated Quantity (if applicable)</label>
+							<input type="text" id="quantity" name="quantity" placeholder="e.g., 500 sheets, 1000 sqm" />
+						</div>
+
+						<div class="form-group">
+							<label for="message">Project Details & Requirements *</label>
+							<textarea id="message" name="message" rows="6" required placeholder="Please describe your project, application, specifications, timeline, or any questions you have..."></textarea>
+						</div>
+
+						<button type="submit" class="submit-btn">Submit Inquiry</button>
+
+						<p class="form-note">
+							* Required fields. Your information will be kept confidential and used only to respond to your inquiry.
+						</p>
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="map-section">
+		<div class="container">
+			<h2 class="section-title">Global Shipping & Export Services</h2>
+			<p class="section-subtitle">
+				We ship premium Black & White Ebony Veneer to furniture manufacturers, designers, and contractors
+				worldwide with professional packaging and reliable logistics partners.
+			</p>
+
+			<div class="shipping-info">
+				<div class="shipping-card">
+					<div class="shipping-icon">🌍</div>
+					<h3>International Export</h3>
+					<p>Experienced in worldwide shipping to 50+ countries across Asia, Europe, Americas, Middle East, and Oceania.</p>
+				</div>
+
+				<div class="shipping-card">
+					<div class="shipping-icon">📦</div>
+					<h3>Professional Packaging</h3>
+					<p>Secure packaging designed for international transport, protecting veneer quality during long-distance shipping.</p>
+				</div>
+
+				<div class="shipping-card">
+					<div class="shipping-icon">📋</div>
+					<h3>Complete Documentation</h3>
+					<p>Full support with export documentation, customs paperwork, and material certifications as required.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<Footer />
+</Layout>
+
+<style>
+	.contact-section {
+		padding: var(--spacing-xl) 0;
+		background: var(--color-white);
+	}
+
+	.contact-grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: var(--spacing-xl);
+		align-items: start;
+	}
+
+	.contact-info h2 {
+		margin-bottom: var(--spacing-md);
+	}
+
+	.contact-intro {
+		font-size: 1.05rem;
+		line-height: 1.8;
+		color: var(--color-gray);
+		margin-bottom: var(--spacing-lg);
+	}
+
+	.info-blocks {
+		margin-bottom: var(--spacing-lg);
+	}
+
+	.info-block {
+		background: var(--color-ivory);
+		padding: var(--spacing-md);
+		border-radius: 8px;
+		margin-bottom: var(--spacing-md);
+	}
+
+	.info-icon {
+		font-size: 2.5rem;
+		margin-bottom: var(--spacing-sm);
+	}
+
+	.info-block h3 {
+		font-size: 1.25rem;
+		margin-bottom: 0.5rem;
+		color: var(--color-ebony);
+	}
+
+	.info-link {
+		color: var(--color-walnut);
+		font-weight: 600;
+		font-size: 1.1rem;
+		display: inline-block;
+		margin-bottom: 0.5rem;
+		transition: color 0.3s ease;
+	}
+
+	.info-link:hover {
+		color: var(--color-gold);
+	}
+
+	.info-block p {
+		font-size: 0.95rem;
+		color: var(--color-gray);
+		margin-bottom: 0.25rem;
+	}
+
+	.info-block .note {
+		font-size: 0.9rem;
+		font-style: italic;
+		color: var(--color-light-gray);
+		margin-top: 0.5rem;
+	}
+
+	.services-list h3 {
+		font-size: 1.35rem;
+		margin-bottom: var(--spacing-sm);
+		color: var(--color-ebony);
+	}
+
+	.services-list ul {
+		list-style: none;
+	}
+
+	.services-list li {
+		padding: 0.5rem 0;
+		padding-left: 1.5rem;
+		position: relative;
+		color: var(--color-gray);
+		font-size: 0.95rem;
+	}
+
+	.services-list li::before {
+		content: '✓';
+		position: absolute;
+		left: 0;
+		color: var(--color-gold);
+		font-weight: 700;
+	}
+
+	.contact-form-wrapper {
+		background: var(--color-ivory);
+		padding: var(--spacing-lg);
+		border-radius: 8px;
+		box-shadow: 0 4px 24px rgba(26, 26, 26, 0.08);
+		position: sticky;
+		top: 100px;
+	}
+
+	.contact-form h3 {
+		font-size: 1.75rem;
+		margin-bottom: var(--spacing-md);
+		color: var(--color-ebony);
+	}
+
+	.form-row {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: var(--spacing-sm);
+	}
+
+	.form-group {
+		margin-bottom: var(--spacing-sm);
+	}
+
+	.form-group label {
+		display: block;
+		font-size: 0.95rem;
+		font-weight: 500;
+		color: var(--color-ebony);
+		margin-bottom: 0.5rem;
+	}
+
+	.form-group input,
+	.form-group select,
+	.form-group textarea {
+		width: 100%;
+		padding: 0.875rem;
+		font-size: 1rem;
+		font-family: var(--font-body);
+		border: 2px solid transparent;
+		border-radius: 4px;
+		background: var(--color-white);
+		color: var(--color-ebony);
+		transition: border-color 0.3s ease;
+	}
+
+	.form-group input:focus,
+	.form-group select:focus,
+	.form-group textarea:focus {
+		outline: none;
+		border-color: var(--color-gold);
+	}
+
+	.form-group textarea {
+		resize: vertical;
+		min-height: 120px;
+	}
+
+	.submit-btn {
+		width: 100%;
+		padding: 1.15rem;
+		font-size: 1.05rem;
+		font-weight: 500;
+		background: var(--color-ebony);
+		color: var(--color-ivory);
+		border: none;
+		border-radius: 4px;
+		cursor: pointer;
+		transition: all 0.3s ease;
+		letter-spacing: 0.5px;
+		margin-top: var(--spacing-sm);
+	}
+
+	.submit-btn:hover {
+		background: var(--color-walnut);
+		transform: translateY(-2px);
+		box-shadow: 0 4px 16px rgba(26, 26, 26, 0.2);
+	}
+
+	.form-note {
+		font-size: 0.85rem;
+		color: var(--color-light-gray);
+		margin-top: var(--spacing-sm);
+		line-height: 1.5;
+	}
+
+	.map-section {
+		padding: var(--spacing-xl) 0;
+		background: var(--color-ivory);
+	}
+
+	.section-title {
+		text-align: center;
+		margin-bottom: var(--spacing-sm);
+	}
+
+	.section-subtitle {
+		text-align: center;
+		font-size: 1.1rem;
+		color: var(--color-gray);
+		max-width: 800px;
+		margin: 0 auto var(--spacing-xl);
+		line-height: 1.8;
+	}
+
+	.shipping-info {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: var(--spacing-md);
+	}
+
+	.shipping-card {
+		background: var(--color-white);
+		padding: var(--spacing-md);
+		border-radius: 8px;
+		box-shadow: 0 2px 12px rgba(26, 26, 26, 0.06);
+		text-align: center;
+		transition: all 0.3s ease;
+	}
+
+	.shipping-card:hover {
+		transform: translateY(-4px);
+		box-shadow: 0 4px 20px rgba(26, 26, 26, 0.12);
+	}
+
+	.shipping-icon {
+		font-size: 3rem;
+		margin-bottom: var(--spacing-sm);
+	}
+
+	.shipping-card h3 {
+		font-size: 1.35rem;
+		margin-bottom: var(--spacing-sm);
+		color: var(--color-ebony);
+	}
+
+	.shipping-card p {
+		font-size: 0.95rem;
+		line-height: 1.7;
+		color: var(--color-gray);
+	}
+
+	@media (max-width: 1024px) {
+		.contact-grid {
+			grid-template-columns: 1fr;
+			gap: var(--spacing-lg);
+		}
+
+		.contact-form-wrapper {
+			position: static;
+		}
+	}
+
+	@media (max-width: 768px) {
+		.contact-section,
+		.map-section {
+			padding: var(--spacing-lg) 0;
+		}
+
+		.form-row {
+			grid-template-columns: 1fr;
+		}
+
+		.contact-form-wrapper {
+			padding: var(--spacing-md);
+		}
+
+		.info-block {
+			padding: var(--spacing-sm);
+		}
+	}
+</style>
+
+<script>
+	const contactForm = document.querySelector('.contact-form');
+
+	if (contactForm) {
+		contactForm.addEventListener('submit', (e) => {
+			e.preventDefault();
+
+			const formData = new FormData(contactForm as HTMLFormElement);
+			const data = Object.fromEntries(formData.entries());
+
+			console.log('Form submitted:', data);
+
+			alert('Thank you for your inquiry! This is a demonstration form. In production, this would send your message to our team.');
+
+			(contactForm as HTMLFormElement).reset();
+		});
+	}
+</script>

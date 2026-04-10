@@ -1,0 +1,471 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Hero from '../components/Hero.astro';
+import ProductCard from '../components/ProductCard.astro';
+import FeatureCard from '../components/FeatureCard.astro';
+import NewsCard from '../components/NewsCard.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import CTASection from '../components/CTASection.astro';
+---
+
+<Layout>
+	<Header />
+
+	<Hero
+		title="Premium Black & White Ebony Veneer"
+		subtitle="Professional B2B wood veneer supplier offering natural and engineered Black & White Ebony Veneer for furniture, interior design, and architectural projects worldwide."
+		cta1Text="Explore Natural Veneer"
+		cta1Link="/natural-veneer"
+		cta2Text="Explore Engineered Veneer"
+		cta2Link="/engineered-veneer"
+		imageUrl="/black-and-white-ebony-veneer-table-workshop.jpg"
+		height="full"
+	/>
+
+	<section class="intro-section">
+		<div class="container">
+			<div class="intro-content">
+				<h2>Luxury Wood Veneer for Exceptional Projects</h2>
+				<p>
+					woodveneer.net is a leading B2B supplier of premium Black & White Ebony Veneer,
+					serving furniture manufacturers, interior designers, architectural material buyers,
+					and project contractors across the globe. We specialize in both natural and engineered
+					veneer solutions, offering superior quality materials for furniture panels, interior
+					wall cladding, doors, cabinetry, and high-end decorative applications.
+				</p>
+				<p>
+					Our commitment to excellence ensures consistent supply, customization capabilities,
+					and professional support for projects of any scale.
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<section class="products-section">
+		<div class="container">
+			<div class="section-header">
+				<h2>Our Premium Veneer Collection</h2>
+				<p>Exceptional Black & White Ebony Veneer in natural and engineered options</p>
+			</div>
+
+			<div class="products-grid">
+				<ProductCard
+					title="Natural Black & White Ebony Veneer"
+					description="Authentic natural wood veneer with unique grain patterns and dramatic black-and-white contrast. Each sheet showcases the distinctive character of genuine ebony timber, perfect for luxury furniture and high-end interior projects."
+					imageUrl="/White_Ebony_Cabinet_(2).png"
+					link="/natural-veneer"
+					features={[
+						"Authentic natural grain patterns",
+						"Unique black & white contrast",
+						"Premium decorative value",
+						"Ideal for luxury projects"
+					]}
+				/>
+
+				<ProductCard
+					title="Engineered Black & White Ebony Veneer"
+					description="Consistent and reliable engineered veneer designed for large-scale commercial applications. Offers uniform appearance, stable supply, and excellent batch consistency for furniture factories and interior contractors."
+					imageUrl="/Riccardo_Sideboard_in_White_Ebony,_Macassar_Ebony_and_Brass.png"
+					link="/engineered-veneer"
+					features={[
+						"Consistent grain appearance",
+						"Stable batch-to-batch quality",
+						"Scalable for large projects",
+						"Custom size options available"
+					]}
+				/>
+			</div>
+		</div>
+	</section>
+
+	<section class="features-section">
+		<div class="container">
+			<div class="section-header">
+				<h2>Why Choose woodveneer.net</h2>
+				<p>Professional B2B veneer solutions designed for your success</p>
+			</div>
+
+			<div class="features-grid">
+				<FeatureCard
+					icon="✦"
+					title="Premium Quality"
+					description="Superior veneer appearance with exceptional grain clarity and color consistency, suitable for the most demanding luxury projects."
+				/>
+
+				<FeatureCard
+					icon="⚡"
+					title="Natural & Engineered Options"
+					description="Choose between authentic natural veneer for unique character or engineered veneer for project consistency and scalability."
+				/>
+
+				<FeatureCard
+					icon="📦"
+					title="Stable Supply Chain"
+					description="Reliable inventory and consistent supply ensure your production schedules stay on track without material delays."
+				/>
+
+				<FeatureCard
+					icon="✂"
+					title="Custom Specifications"
+					description="Flexible sizing, thickness options, and backing solutions tailored to your manufacturing requirements."
+				/>
+
+				<FeatureCard
+					icon="🌍"
+					title="Global Export Experience"
+					description="Extensive international shipping expertise with proper packaging and documentation for worldwide delivery."
+				/>
+
+				<FeatureCard
+					icon="🤝"
+					title="OEM / ODM Support"
+					description="Comprehensive customization services including custom patterns, sizes, and backing options for branded products."
+				/>
+			</div>
+		</div>
+	</section>
+
+	<section class="applications-section">
+		<div class="container">
+			<div class="section-header">
+				<h2>Applications & Industries</h2>
+				<p>Premium veneer solutions for diverse architectural and interior design projects</p>
+			</div>
+
+			<div class="applications-grid">
+				<div class="application-card">
+					<div class="application-icon">🪑</div>
+					<h3>Furniture Manufacturing</h3>
+					<p>High-end furniture panels, table tops, cabinet doors, and decorative surfaces for luxury residential and commercial furniture.</p>
+				</div>
+
+				<div class="application-card">
+					<div class="application-icon">🏢</div>
+					<h3>Interior Wall Panels</h3>
+					<p>Premium wall cladding and decorative panels for luxury residences, hotels, restaurants, and corporate interiors.</p>
+				</div>
+
+				<div class="application-card">
+					<div class="application-icon">🚪</div>
+					<h3>Doors & Cabinetry</h3>
+					<p>Sophisticated door skins, cabinet facings, and architectural millwork for high-specification projects.</p>
+				</div>
+
+				<div class="application-card">
+					<div class="application-icon">✨</div>
+					<h3>Decorative Surfaces</h3>
+					<p>Luxury decorative veneering for retail displays, hospitality interiors, and custom architectural features.</p>
+				</div>
+
+				<div class="application-card">
+					<div class="application-icon">🏨</div>
+					<h3>Hospitality Projects</h3>
+					<p>Premium veneer solutions for hotel lobbies, restaurants, bars, and upscale commercial environments.</p>
+				</div>
+
+				<div class="application-card">
+					<div class="application-icon">🎨</div>
+					<h3>Bespoke Interiors</h3>
+					<p>Custom veneer solutions for interior designers and architects creating unique, high-end residential spaces.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="projects-preview">
+		<div class="container">
+			<div class="section-header">
+				<h2>Featured Projects</h2>
+				<p>Discover how our premium veneer elevates exceptional design projects</p>
+			</div>
+
+			<div class="projects-grid">
+				<ProjectCard
+					title="Luxury Hotel Lobby"
+					category="Hospitality"
+					imageUrl="/Royal_Ebony_Console_Table.png"
+					description="Dramatic wall panels featuring natural Black & White Ebony Veneer creating a striking first impression."
+				/>
+
+				<ProjectCard
+					title="Executive Furniture Collection"
+					category="Furniture"
+					imageUrl="/Ebony_and_Black_Leather_with_Metal_Leg.png"
+					description="High-end office furniture with engineered ebony veneer for consistent luxury across the entire collection."
+				/>
+
+				<ProjectCard
+					title="Residential Interior Design"
+					category="Interior Design"
+					imageUrl="/White_Ebony_Cabinet_(1).png"
+					description="Custom wall paneling and cabinetry showcasing the unique grain patterns of natural ebony veneer."
+				/>
+			</div>
+
+			<div class="section-cta">
+				<a href="/project" class="link-button">View All Projects</a>
+			</div>
+		</div>
+	</section>
+
+	<section class="news-preview">
+		<div class="container">
+			<div class="section-header">
+				<h2>Latest Industry Insights</h2>
+				<p>Expert knowledge on wood veneer selection, applications, and industry trends</p>
+			</div>
+
+			<div class="news-grid">
+				<NewsCard
+					title="Understanding Natural vs Engineered Veneer"
+					excerpt="A comprehensive guide to help furniture manufacturers and designers choose the right veneer type for their projects based on aesthetic requirements and production scale."
+					date="March 15, 2024"
+					category="Veneer Guide"
+					imageUrl="/White_Ebony_Cabinet_(2).png"
+					slug="natural-vs-engineered-veneer"
+				/>
+
+				<NewsCard
+					title="Black & White Ebony: The Signature of Luxury"
+					excerpt="Explore why Black & White Ebony Veneer has become the material of choice for high-end furniture manufacturers and luxury interior design projects worldwide."
+					date="March 10, 2024"
+					category="Design Trends"
+					imageUrl="/Ebony_and_Black_Leather_with_Metal_Leg.png"
+					slug="ebony-veneer-luxury-design"
+				/>
+
+				<NewsCard
+					title="Veneer Selection Guide for Furniture Factories"
+					excerpt="Key considerations when sourcing premium veneer for mass production: quality standards, consistency requirements, backing options, and supply chain management."
+					date="March 5, 2024"
+					category="Industry"
+					imageUrl="/Royal_Ebony_Console_Table.png"
+					slug="veneer-selection-guide-furniture-factories"
+				/>
+			</div>
+
+			<div class="section-cta">
+				<a href="/news" class="link-button">Read More Articles</a>
+			</div>
+		</div>
+	</section>
+
+	<CTASection
+		title="Request Samples & Discuss Your Project"
+		description="Connect with our team to receive veneer samples, discuss specifications, and explore custom solutions for your furniture or interior design project. We're ready to support your vision with premium Black & White Ebony Veneer."
+		ctaText="Contact Us Today"
+		ctaLink="/contact"
+		background="dark"
+	/>
+
+	<Footer />
+</Layout>
+
+<style>
+	.intro-section {
+		padding: var(--spacing-xl) 0;
+		background: var(--color-white);
+	}
+
+	.intro-content {
+		max-width: 900px;
+		margin: 0 auto;
+		text-align: center;
+	}
+
+	.intro-content h2 {
+		margin-bottom: var(--spacing-md);
+	}
+
+	.intro-content p {
+		font-size: 1.1rem;
+		line-height: 1.8;
+		margin-bottom: var(--spacing-md);
+	}
+
+	.intro-content p:last-child {
+		margin-bottom: 0;
+	}
+
+	.products-section,
+	.features-section,
+	.applications-section,
+	.projects-preview,
+	.news-preview {
+		padding: var(--spacing-xl) 0;
+	}
+
+	.products-section {
+		background: var(--color-ivory);
+	}
+
+	.features-section {
+		background: var(--color-white);
+	}
+
+	.applications-section {
+		background: var(--color-ivory);
+	}
+
+	.projects-preview {
+		background: var(--color-ebony);
+	}
+
+	.projects-preview .section-header h2,
+	.projects-preview .section-header p {
+		color: var(--color-ivory);
+	}
+
+	.news-preview {
+		background: var(--color-white);
+	}
+
+	.section-header {
+		text-align: center;
+		max-width: 800px;
+		margin: 0 auto var(--spacing-xl);
+	}
+
+	.section-header h2 {
+		margin-bottom: var(--spacing-sm);
+	}
+
+	.section-header p {
+		font-size: 1.15rem;
+		color: var(--color-gray);
+	}
+
+	.products-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+		gap: var(--spacing-lg);
+	}
+
+	.features-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: var(--spacing-md);
+	}
+
+	.applications-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+		gap: var(--spacing-md);
+	}
+
+	.application-card {
+		background: var(--color-white);
+		padding: var(--spacing-md);
+		border-radius: 8px;
+		box-shadow: 0 2px 12px rgba(26, 26, 26, 0.06);
+		transition: all 0.3s ease;
+		text-align: center;
+	}
+
+	.application-card:hover {
+		transform: translateY(-4px);
+		box-shadow: 0 4px 20px rgba(26, 26, 26, 0.12);
+	}
+
+	.application-icon {
+		font-size: 3rem;
+		margin-bottom: var(--spacing-sm);
+	}
+
+	.application-card h3 {
+		font-size: 1.35rem;
+		margin-bottom: var(--spacing-sm);
+		color: var(--color-ebony);
+	}
+
+	.application-card p {
+		font-size: 0.95rem;
+		line-height: 1.7;
+	}
+
+	.projects-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+		gap: var(--spacing-md);
+		margin-bottom: var(--spacing-lg);
+	}
+
+	.news-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+		gap: var(--spacing-md);
+		margin-bottom: var(--spacing-lg);
+	}
+
+	.section-cta {
+		text-align: center;
+	}
+
+	.link-button {
+		display: inline-block;
+		padding: 1rem 2.5rem;
+		font-size: 1rem;
+		font-weight: 500;
+		color: var(--color-ebony);
+		border: 2px solid var(--color-ebony);
+		border-radius: 4px;
+		transition: all 0.3s ease;
+		letter-spacing: 0.5px;
+	}
+
+	.link-button:hover {
+		background: var(--color-ebony);
+		color: var(--color-ivory);
+		transform: translateY(-2px);
+	}
+
+	.projects-preview .link-button {
+		color: var(--color-ivory);
+		border-color: var(--color-ivory);
+	}
+
+	.projects-preview .link-button:hover {
+		background: var(--color-ivory);
+		color: var(--color-ebony);
+	}
+
+	@media (max-width: 1024px) {
+		.products-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.features-grid {
+			grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		}
+
+		.applications-grid {
+			grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+		}
+	}
+
+	@media (max-width: 768px) {
+		.intro-section,
+		.products-section,
+		.features-section,
+		.applications-section,
+		.projects-preview,
+		.news-preview {
+			padding: var(--spacing-lg) 0;
+		}
+
+		.section-header {
+			margin-bottom: var(--spacing-md);
+		}
+
+		.intro-content p {
+			font-size: 1rem;
+		}
+
+		.projects-grid,
+		.news-grid {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>
