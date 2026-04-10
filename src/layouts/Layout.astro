@@ -24,7 +24,7 @@ const {
 	</head>
 	<body>
 		<slot />
-		<script>
+		<script is:inline>
 			if (window.netlifyIdentity) {
 				window.netlifyIdentity.on("init", user => {
 					if (!user) {
