@@ -1,7 +1,7 @@
 ---
 title: Understanding Natural vs Engineered Veneer
 slug: natural-vs-engineered-veneer
-publish_date: 2024-03-15
+publish_date: "2024-03-15"
 featured_image: /uploads/natural-veneer-detail.jpg
 category: Veneer Guide
 summary: A comprehensive guide to help furniture manufacturers and designers choose the right veneer type for their projects based on aesthetic requirements and production scale.
